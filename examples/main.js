@@ -9,9 +9,9 @@ Vue.directive('hljs', el => {
   Array.prototype.forEach.call(blocks, hljs.highlightBlock)
 })
 
-import authImage from './../packages/index'
+import AuthImage from './../packages/index'
 
-Vue.use(authImage)
+Vue.use(AuthImage)
 
 // Vue.config.productionTip = false
 
