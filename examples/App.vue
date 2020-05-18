@@ -9,7 +9,7 @@
       <h1>vAuthImage</h1>
       <h2>Demo</h2>
       <p>打开控制台的network,筛选xhr，刷新页面后，查看logo.png请求，会看到request 里面有Authorization和x-token自定义字段 </p>
-      <authImage :src="img_url" :auth-params="authParams" style="width:100px;height:100px;" @load="loaded" @error="loadError"></authImage>
+      <AuthImage :src="img_url" :auth-params="authParams" style="width:100px;height:100px;" @load="loaded" @error="loadError"></AuthImage>
       <h2>特点</h2>
       <ol>
         <li>可自定义header字段，无限制数量</li>
