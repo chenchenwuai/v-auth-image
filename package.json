@@ -1,6 +1,6 @@
 {
   "name": "vauthimage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "基于 Vue 的权限图片获取查看",
   "main": "lib/vauthimage.umd.min.js",
   "keyword": "vauthimage auth-image authimage",
@@ -12,7 +12,6 @@
     "lib": "vue-cli-service build --target lib --name vauthimage --dest lib packages/index.js"
   },
   "dependencies": {
-    "element-ui": "^2.13.2",
     "highlight.js": "^10.0.3",
     "vue": "^2.6.10"
   },
