@@ -1,6 +1,6 @@
 {
   "name": "vauthimage",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "基于 Vue 的权限图片获取查看",
   "main": "lib/vauthimage.umd.min.js",
   "keyword": "vauthimage auth-image authimage",
