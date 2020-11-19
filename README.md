@@ -29,17 +29,23 @@
   ### 在项目中使用 vauthimage
   ```html
     <template>
-      <authImage :src="imageUrl" :auth-params="authParams" />
+      <authImage :src="imageUrl" :headers="headers" />
     </template>
     <script>
       export default {
         data () {
           return {
             imageUrl: 'http://xxx.xxx.png',
-            authParams: {
-              Authorization: 'this is a token',
-              'x-token': 'this is a header param'
-            }
+            headers: [
+              {
+                key:'Authorization',
+                value:'bearer tokenxxxxxx'
+              },
+              {
+                key:'x-token',
+                value:'asdasasdad'
+              }
+            ]
           }
         }
       }
