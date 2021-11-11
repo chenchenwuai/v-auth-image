@@ -1,59 +1,64 @@
-# vue-auth-image
-一个基于vue的显示带权限图片的组件
+# v-auth-image
+一个显示有认证机制的图片的vue2指令
 
 ## 特点
   + 可自定义`header`字段，无限制数量
-  + 简单易用，结构简单，只有一个`img`标签
-  + 可根据业务快速修改，代码简单
-  + 提供以 `npm` 的形式安装提供全局组件 `vauthimage`
+  + 简单易用，结构简单，只有一个`v-auth-image`指令
 ## 安装
-  ### git clone
-  ```bash
-    git clone git@github.com:chenchenwuai/vue-auth-image.git 
-    cd vue-auth-image
-    npm i
-    npm run lib // 在dist文件夹生成可通过script标签引入的js文件
-    npm run serve // 本地运行
-    npm run build // 打包demo
-  ```
-  ### npm 安装
-  ```bash
-    npm i vauthimage -S
-  ```
+```bash
+  npm i v-auth-image
+```
 ## 使用
-  ### 在 `main.js` 文件中引入插件并注册
+  ### 注册指令
   ```js
-    import vauthimage from 'vauthimage'
-    Vue.use(vauthimage)
+    import vAuthImage from 'v-auth-image'
+
+    Vue.use(vAuthImage,{
+      // 默认图片，还未加载图片显示。[可选]
+      defaultSRC:'default.logo',
+
+      /**
+      * 默认请求headers，[可选]，类似于 
+      * { Authorization: "bearer xasdasdfasdfa", 'x-token': "x-token this is a x-token" } 的对象
+      */
+      defaultHeaders:{
+        Authorization: "bearer this is a authorization"
+      },
+      
+      // 动态获取到的headers，会与 defaultHeaders 覆盖合并。[可选]
+      getHeaders: getHeaders 
+    })
+    function getHeaders(){
+      return {
+        'x-token': "x-token this is a x-token",
+        Authorization: "bearer this is a authorization2"
+      }
+    }
   ```
-  ### 在项目中使用 vauthimage
+  ### 使用指令 v-auth-image
   ```html
     <template>
-      <authImage :src="imageUrl" :headers="headers" />
+      <img 
+        v-auth-image="img_url"
+        v-auth-image:success="imageLoadSuccess"
+        v-auth-image:error="imageLoadError"
+      >
     </template>
     <script>
       export default {
         data () {
           return {
-            imageUrl: 'http://xxx.xxx.png',
-            headers: [
-              {
-                key:'Authorization',
-                value:'bearer tokenxxxxxx'
-              },
-              {
-                key:'x-token',
-                value:'asdasasdad'
-              }
-            ]
+            imageUrl: 'http://xxx.xxx.png'
+          }
+        },
+        methods:{
+          imageLoadSuccess(e){
+            console.log('load success',e);
+          },
+          imageLoadError(e){
+            console.log('load error',e);
           }
         }
       }
     </script>
-  ```
-## 事件
-  `load`加载成功触发
-  `error`加载失败触发
-  ```html
-    <authImage v-on:load="headleloaded" v-on:error="headleLoadError" >
   ```

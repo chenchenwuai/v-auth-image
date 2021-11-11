@@ -1,28 +1,40 @@
 {
-  "name": "vauthimage",
-  "version": "0.2.0",
-  "description": "基于 Vue 的权限图片获取查看",
-  "main": "lib/vauthimage.umd.min.js",
-  "keyword": "vauthimage auth-image authimage",
+  "name": "v-auth-image",
+  "version": "1.0.1",
+  "description": "Vue directive to load and display secured images by custom headers. 基于 Vue 的权限图片获取查看，提供加载成功或失败回调。",
+  "main": "lib/v-auth-image.umd.min.js",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vauthimage --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name vauthimage --dest lib packages/index.js",
+    "pub": "npm pub"
   },
-  "dependencies": {
-    "highlight.js": "^10.0.3",
-    "vue": "^2.6.10"
-  },
+  "files": [
+    "lib/vauthimage*",
+    "packages"
+  ],
+  "keywords": [
+    "vue-auth-image",
+    "v-auth-image",
+    "authorization",
+    "directive",
+    "image",
+    "headers",
+    "token",
+    "src",
+    "data-uri"
+  ],
+  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-plugin-eslint": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
     "babel-plugin-component": "^1.1.1",
-    "node-sass": "^4.9.3",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.17"
+    "highlight.js": "^11.3.1",
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,
