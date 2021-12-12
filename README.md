@@ -39,7 +39,7 @@
   ```html
     <template>
       <img 
-        v-auth-image="img_url"
+        v-auth-image="imgUrl"
         v-auth-image:success="imageLoadSuccess"
         v-auth-image:error="imageLoadError"
       >
